@@ -12,14 +12,14 @@ But that's not all! Our application also allows the user to convert the calculat
 
 Before running this application ensure that the following are installed on your system.
 
-Node.js
-NPM
+Node.js,
+NPM,
 Angular CLI
 
 ## Installation
 
 1- Clone the repository
-`git clone <the project's github uri>`
+`git clone https://github.com/dilanettd/GeoCalc.git`
 
 2- Navigate to the project directory
 
