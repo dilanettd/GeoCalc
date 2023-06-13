@@ -1,0 +1,153 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header"><h5>Calculating area and Perimeter</h5></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-sm-6 left">
+          <div class="alert alert-danger my-2" role="alert" *ngIf="isError">
+            You must enter positive values greater than 0
+          </div>
+          <div class="margin-auto">
+            <div class="form-group mb-2">
+              <label for="figure">Select figure</label>
+              <select
+                class="form-select form-control"
+                id="figure"
+                (change)="selectedFigure($event)"
+              >
+                <option *ngFor="let figure of figuresList" [value]="figure.id">
+                  {{ figure.name }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="typeOfCalculation">Perimeter/Area</label>
+              <select
+                class="form-select form-control"
+                id="typeOfCalculation"
+                (change)="selectedType($event)"
+              >
+                <option>Perimeter</option>
+                <option>Area</option>
+              </select>
+            </div>
+          </div>
+          <form #myForm="ngForm">
+            <div class="attributes" *ngIf="currentFigure">
+              <div
+                class="attributesPerimeter"
+                *ngIf="typeOfCalculation === 'Perimeter'"
+              >
+                <div
+                  class="d-flex align-items-center"
+                  *ngFor="
+                    let attribute of currentFigure.attributesPerimeter;
+                    let i = index
+                  "
+                >
+                  <label [for]="'attribute' + i" class="col form-label"
+                    >{{ attribute }}
+                  </label>
+                  <div class="input-group">
+                    <input
+                      class="form-control"
+                      type="number"
+                      pattern="[0-9]+"
+                      [id]="'attribute' + i"
+                      [name]="'attribute' + i"
+                      [(ngModel)]="myModel[attribute]"
+                      min="0"
+                      required
+                    />
+                    <span class="input-group-text" id="basic-addon2">m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="attributesArea" *ngIf="typeOfCalculation === 'Area'">
+                <div
+                  class="d-flex align-items-center"
+                  *ngFor="
+                    let attribute of currentFigure.attributesArea;
+                    let i = index
+                  "
+                >
+                  <label for="{{ attribute }}" class="col form-label"
+                    >{{ attribute }}
+                  </label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      type="number"
+                      pattern="[0-9]+"
+                      [id]="'attribute' + i"
+                      [name]="'attribute' + i"
+                      [(ngModel)]="myModel[attribute]"
+                      min="0"
+                      required
+                    />
+                    <span class="input-group-text" id="basic-addon2">m</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="result my-3" *ngIf="result > 0">
+            <div class="input-group">
+              <label class="input-group-text" for="unitArea"
+                >{{ typeOfCalculation }} = {{ result }}</label
+              >
+              <select
+                class="form-select"
+                (change)="changePerimeterUnit($event)"
+                *ngIf="typeOfCalculation === 'Perimeter'"
+              >
+                <option *ngFor="let unit of perimeterUnitsList" [value]="unit">
+                  {{ unit }}
+                </option>
+              </select>
+              <select
+                class="form-select"
+                (change)="changeAreaUnit($event)"
+                *ngIf="typeOfCalculation === 'Area'"
+              >
+                <option *ngFor="let unit of AreaUnitsList" [value]="unit">
+                  {{ unit }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="my-3">
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              (click)="calculate()"
+            >
+              Calculate
+            </button>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 right" *ngIf="currentFigure">
+          <div class="right-header">{{ currentFigure.name }}</div>
+          <div class="image my-4" *ngIf="typeOfCalculation === 'Perimeter'">
+            <img
+              [src]="baseurl + 'images/' + currentFigure.imagePerimeter"
+              alt="{{ currentFigure.id }}"
+            />
+          </div>
+          <div class="image my-4" *ngIf="typeOfCalculation === 'Area'">
+            <img
+              [src]="baseurl + 'images/' + currentFigure.imageArea"
+              alt="{{ currentFigure.id }}"
+            />
+          </div>
+          <div class="formula">
+            <label>{{ currentFigure.perimeterFormula }} </label>
+            <label>{{ currentFigure.areaFormula }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

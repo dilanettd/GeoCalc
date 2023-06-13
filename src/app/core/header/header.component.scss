@@ -1,0 +1,25 @@
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1976d2ce;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.header img {
+  margin-left: 46px;
+  @media only screen and (max-width: 768px) {
+    margin-left: 16px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white !important;
+}

@@ -1,0 +1,14 @@
+.footer {
+  height: 90px;
+  margin-top: 20px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(192, 217, 238);
+  @media screen and (min-width: 768px) {
+    position: fixed;
+  }
+}
+p {
+  font-weight: bold;
+  text-align: center;
+}
