@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit {
         break;
     }
 
-    return Number(result.toFixed(12));
+    return Number(result.toFixed(3));
   }
 
   /**
@@ -193,7 +193,7 @@ export class HomeComponent implements OnInit {
         result /= 1000000;
         break;
     }
-    return Number(result.toFixed(12));
+    return Number(result.toFixed(3));
   }
 
   /**

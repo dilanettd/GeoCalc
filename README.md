@@ -21,14 +21,14 @@ Angular CLI
 1- Clone the repository
 `git clone https://github.com/dilanettd/GeoCalc.git`
 
-2- Navigate to the project directory
+2- Navigate to the project directory using the `cd` command available in terminal
 
-3- Install dependencies
+3- Install dependencies by executing
 `npm install`
 
 ## Usage
 
-1- Start the development server
+1- Start the development server by executing
 `ng serve`
 
 2- Navigate to http://localhost:4200/ on your web browser.
