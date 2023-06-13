@@ -1,26 +1,49 @@
-# FrontEnd
+## Project Title
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
+hellocomputing test FrontEnd APP
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Our goal is to make math engaging and fun by providing an interactive application that allows children to visualize figures and learn how to calculate their perimeters and areas easily. Our web application allows the user to choose from a list of shapes including rectangle, square, circle, and triangle. Once a shape is selected, the user can choose whether they want to know the perimeter or area of that shape. They can then enter the required values and the application will calculate the perimeter or area of the selected shape.
 
-## Code scaffolding
+But that's not all! Our application also allows the user to convert the calculated perimeter or area into other units such as centimetre, decimetre, metre and kilometre. The default unit is metre (m), but the user can switch to any unit from the list provided. The list of possible units and shapes are retrieved directly from our Node.js API that is specifically built for this purpose.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
+
+Before running this application ensure that the following are installed on your system.
+
+Node.js
+NPM
+Angular CLI
+
+## Installation
+
+1- Clone the repository
+`git clone <the project's github uri>`
+
+2- Navigate to the project directory
+
+3- Install dependencies
+`npm install`
+
+## Usage
+
+1- Start the development server
+`ng serve`
+
+2- Navigate to http://localhost:4200/ on your web browser.
+
+3- Enter the server address in the environment file, for example API_URL: 'http://127.0.0.1:5000/',
+
+4-Enjoy the app!
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `npx cypress open` to execute the end-to-end tests via a platform of your choice.
 
 ## Further help
 
